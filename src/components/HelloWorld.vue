@@ -23,27 +23,20 @@ export default {
   },
   mounted () {
     this.$nextTick(() => {
+      const viewer = new Cesium.Viewer('cesiumContainer', {
+        geocoder: false,
+        homeButton: false,
+        sceneModePicker: false,
+        baseLayerPicker: true,
+        navigationHelpButton: false,
+        animation: false,
+        creditContainer: 'cesiumContainer',
+        timeline: false,
+        fullscreenButton: false,
+        vrButton: false,
+      })
 
-      // let viewer = new Cesium.Viewer('cesiumContainer', {
-      //   baseLayerPicker: false,
-      //   fullscreenButton: false,
-      //   geocoder: false,
-      //   homeButton: false,
-      //   animation: false,
-      //   infoBox: false,
-      //   sceneModePicker: false,
-      //   selectionIndicator: false,
-      //   // creditContainer: "creditBar",
-      //   skyBox: false,
-      //   skyAtmosphere: false,
-      //   timeline: false,
-      //   navigationHelpButton: false,
-      //   scene3DOnly: true,
-      //   allowDataSourcesToSuspendAnimation: false
-      // })
-      // window.viewer = viewer
-
-      const viewer = new Cesium.Viewer('cesiumContainer')
+      // viewer._cesiumWidget._creditContainer.style.display = 'none'
       console.log('viewer: ', viewer)
     })
   }
